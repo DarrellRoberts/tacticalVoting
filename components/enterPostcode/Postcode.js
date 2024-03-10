@@ -22,7 +22,8 @@ export default function Postcode() {
   };
 
   return (
-    <View>
+    <View
+      style={styles.background}>
       <Text style={styles.paragraph}>Constituency: </Text>
       <Text style={styles.paragraph}>
         {contin ? contin?.parliamentary_constituency : "Constituency not found"}
@@ -34,10 +35,15 @@ export default function Postcode() {
 }
 
 const styles = StyleSheet.create({
+  background: {
+    backgroundColor: "#228b22",
+    flex: 1,
+    alignItems: "center",
+  },
   paragraph: {
     fontSize: 30,
     color: "white",
     fontWeight: "bold",
     textAlign: "center",
-  },
+  }
 });

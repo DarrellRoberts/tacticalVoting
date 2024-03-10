@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Pressable } from "react-native"
 
-export default function Homepage() {
+export default function Homepage({navigation}) {
     return (
         <>
         <View style={styles.background}>
@@ -8,11 +8,13 @@ export default function Homepage() {
           <Text style={styles.text}>To find which party to vote for, either track your location or search for your postcode below</Text>
           <Pressable
           style={styles.button}
+          onPress={() => navigation.navigate("Track Location")}
           >
             <Text style={styles.text}>Track Location</Text>
           </Pressable>
           <Pressable
           style={styles.button}
+          onPress={() => navigation.navigate("Enter Postcode")}
           >
             <Text style={styles.text}>Enter Postcode</Text>
           </Pressable>
@@ -55,5 +57,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         letterSpacing: 0.25,
         color: 'white',
+        textAlign: 'center'
       },
   });

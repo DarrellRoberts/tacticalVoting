@@ -34,7 +34,6 @@ export default function FetchLocation() {
         const data = fetch(
           `https://api.postcodes.io/postcodes?lon=${location?.longitude}&lat=${location?.latitude}`
         );
-        // const data = await fetch("https://api.postcodes.io/postcodes?lon=0.009871&lat=51.125024")
         const conData = await data.json();
         const conResData = await conData;
         setCon(conResData.result);
@@ -60,7 +59,9 @@ export default function FetchLocation() {
   console.log(location);
   con ? console.log(con[0]?.parliamentary_constituency) : null;
   return (
-    <View>
+    <View
+      style={styles.background}
+    >
       <Pressable
         title="Track location"
         onPress={handlePress}
@@ -85,6 +86,11 @@ export default function FetchLocation() {
 }
 
 const styles = StyleSheet.create({
+  background: {
+    backgroundColor: "#228b22",
+    flex: 1,
+    alignItems: "center",
+  },
   button: {
     marginVertical: 10,
     paddingVertical: 10,
